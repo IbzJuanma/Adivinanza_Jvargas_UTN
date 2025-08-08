@@ -10,7 +10,7 @@ while (true){
         2- Hacks gratis puntos infinitos
         3- Jugar mario bros online
         4- salir del juegardo
-        5- generador de masivos
+        5- generador de masivos (no anda kjesak)
 
         `)
     const opcion = await input("Seleccioná una opcion: ")
@@ -31,10 +31,10 @@ while (true){
             intentos++
             console.log(`Intento: ${intentos}/${maxIntentos}`)
             
-            const respuesta = await input("Ingresa una letra: ")
+            const respuesta = await input("Ingresa una letra(que sea una letra): ")
             
             if (respuesta.length !== 1) {
-                console.log("Debes ingresar solo UNA letra")
+                console.log("Debes ingresar solo UNA letra man")
                 intentos--
                 continue
             }
