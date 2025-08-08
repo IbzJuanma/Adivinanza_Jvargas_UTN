@@ -10,7 +10,7 @@ while (true){
         2- Hacks gratis puntos infinitos
         3- Jugar mario bros online
         4- salir del juegardo
-        5- generador de masivos (no anda kjesak)
+        5- generador de masivos (ahora si anda)
 
         `)
     const opcion = await input("Seleccioná una opcion: ")
@@ -18,13 +18,19 @@ while (true){
     if (opcion === "1"){
         console.clear()
         console.log("SUPER EPIC MASIVO JUEGO DE ADIVINAR LA LETRA")
-        console.log("Maximo 15 intentos")
+        console.log("Maximo 30 intentos, ojo al tejo")
         
         const letras = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
         const letraoculta = letras[Math.floor(Math.random() * letras.length)]
         
+        if (letraoculta >= 'A' && letraoculta <= 'Z') {
+            console.log("Pistarda: La letra es MAYUSCULA")
+        } else {
+            console.log("Pistarda: La letra es MINUSCULA")
+        }
+        
         let intentos = 0
-        const maxIntentos = 15
+        const maxIntentos = 30
         let adivinado = false
         
         while (intentos < maxIntentos && !adivinado) {
@@ -34,7 +40,7 @@ while (true){
             const respuesta = await input("Ingresa una letra(que sea una letra): ")
             
             if (respuesta.length !== 1) {
-                console.log("Debes ingresar solo UNA letra man")
+                console.log("Debes ingresar solo UNA letra man, hace caso")
                 intentos--
                 continue
             }
@@ -43,8 +49,10 @@ while (true){
                 adivinado = true;
                 console.log("Muy bien amigo estas picado!! felicidades");
                 console.log("Adivinaste la letra '" + letraoculta + "' en el intento " + intentos + "!");
+                const {exec} = await import('child_process')
+                exec("start https://www.youtube.com/watch?v=k8sTHtoYWL4&list=PLxqfTLq22IyboJ_4HqZVqa9egz0g-OSxA&index=16")
 
-                let puntaje = 100 - (intentos - 1) * 7;
+                let puntaje = 100 - (intentos - 1) * 3;
                 if (puntaje < 0) {
                     puntaje = 0;
                 }
@@ -84,7 +92,7 @@ while (true){
     else if(opcion ==="3"){
         console.log("Abriendo mario bros online...")
         const {exec} = await import('child_process')
-        exec("start https://miro.medium.com/v2/resize:fit:1400/1*7BTTDiiBTr7ZpkCwaMu4-A.png")
+        exec("start https://www.youtube.com/watch?v=70fP1M8hZVA")
     }
     else if (opcion === "4"){
         console.log(clear)
