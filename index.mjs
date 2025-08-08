@@ -40,13 +40,16 @@ while (true){
             }
             
             if (respuesta === letraoculta) {
-                adivinado = true
-                console.log(`Muy bien amigo estas picado, la adivinaste al toque`)
-                console.log(`Adivinaste la letra '${letraoculta}' en el intento ${intentos}!`)
-                
-                let puntaje = Math.max(0, Math.round(100 - ((intentos - 1) * (100 / 14))))
-                console.log(`Tu puntaje: ${puntaje}/100`)
-                
+                adivinado = true;
+                console.log("Muy bien amigo estas picado!! felicidades");
+                console.log("Adivinaste la letra '" + letraoculta + "' en el intento " + intentos + "!");
+
+                let puntaje = 100 - (intentos - 1) * 7;
+                if (puntaje < 0) {
+                    puntaje = 0;
+                }
+                console.log("Tu puntaje: " + puntaje + "/100");
+
                 if (puntaje >= 80) {
                     console.log("ADIVINADOR NATO")
                 } else if (puntaje >= 60) {
