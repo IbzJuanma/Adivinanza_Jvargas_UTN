@@ -96,6 +96,7 @@ while (true){
         for (let i = 0; i < 500; i++) {
         salida += "masivo ";
         }
+        console.log(salida)
         await input('Presione cualquier tecla para continuar...')
     }
 }
